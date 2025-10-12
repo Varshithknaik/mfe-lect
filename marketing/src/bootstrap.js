@@ -8,6 +8,8 @@ const mount = (el) => {
   root.render(<App />);
 };
 
+console.log("called marking");
+
 // If we are development and in isolation, call mount immediately
 if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_marketing-dev-root");
