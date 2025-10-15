@@ -5,6 +5,7 @@ export default () => {
     <div>
       <h1>Hi There</h1>
       <hr />
+      <hr />
       <MarketingApp />
     </div>
   );
