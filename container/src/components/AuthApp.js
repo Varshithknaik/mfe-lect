@@ -9,12 +9,14 @@ export default () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const { onParentNavigateRef } = mount(ref.current, {
+    const { onParentNavigate } = mount(ref.current, {
       initialPath: location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         navigate(nextPathname);
       },
     });
+
+    onParentNavigateRef.current = onParentNavigate;
   }, []);
 
   useEffect(() => {
