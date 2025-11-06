@@ -2,7 +2,7 @@ import { mount } from "auth/AuthApp";
 import React, { useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default () => {
+export default ({ onSignIn }) => {
   const ref = useRef(null);
   const onParentNavigateRef = useRef(null);
   const location = useLocation();
@@ -14,6 +14,7 @@ export default () => {
       onNavigate: ({ pathname: nextPathname }) => {
         navigate(nextPathname);
       },
+      onSignIn,
     });
 
     onParentNavigateRef.current = onParentNavigate;
